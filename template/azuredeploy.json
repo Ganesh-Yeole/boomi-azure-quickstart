@@ -46,7 +46,7 @@
     },
     "moleculeClusterName": {
       "type": "string",
-      "defaultValue": "Boomi-Molecule-VM",
+      "defaultValue": "Boomi_Molecule_VM",
       "metadata": {
         "description": "The name for the Boomi Molecule cluster."
       }
