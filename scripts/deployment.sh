@@ -148,6 +148,7 @@ if [ $node_type == "head" ]
 then
   ${MoleculeSharedDir}/Molecule_${MoleculeClusterName}/bin/atom stop
   sudo -u boomi bash -c "${MoleculeSharedDir}/Molecule_${MoleculeClusterName}/bin/atom start"
+  sh /tmp/molecule_set_cluster_properties.sh
 elif [ $node_type == "worker" ]
 then
   sleep 300
@@ -158,7 +159,6 @@ then
   sleep 400
   ${MoleculeSharedDir}/Molecule_${MoleculeClusterName}/bin/atom stop
   sudo -u boomi bash -c "${MoleculeSharedDir}/Molecule_${MoleculeClusterName}/bin/atom start"
-  sh /tmp/molecule_set_cluster_properties.sh
 fi
 
 sleep 60
