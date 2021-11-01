@@ -134,21 +134,20 @@ then
   ls -l
   sudo -u boomi bash -c "/tmp/molecule_install64.sh -q -console -Vusername=$boomi_username -Vpassword=$boomi_password  -VatomName=$MoleculeClusterName -VaccountId=$boomi_account -VlocalPath=$MoleculeLocalPath -VlocalTempPath=$MoleculeLocalTemp -dir $MoleculeSharedDir"
   fi
+
+sh /tmp/molecule_set_cluster_properties.sh
+mv /tmp/molecule.service /lib/systemd/system/molecule.service
+systemctl enable molecule
 fi
  
 chown -R boomi:boomi ${MoleculeSharedDir}/Molecule_${MoleculeClusterName}
 chmod -R 777 ${MoleculeSharedDir}/Molecule_${MoleculeClusterName}
-
-mv /tmp/molecule.service /lib/systemd/system/molecule.service
-systemctl enable molecule
-
 
 
 if [ $node_type == "head" ]
 then
   ${MoleculeSharedDir}/Molecule_${MoleculeClusterName}/bin/atom stop
   sudo -u boomi bash -c "${MoleculeSharedDir}/Molecule_${MoleculeClusterName}/bin/atom start"
-  sh /tmp/molecule_set_cluster_properties.sh
 elif [ $node_type == "worker" ]
 then
   sleep 300
