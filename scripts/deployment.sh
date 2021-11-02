@@ -119,7 +119,7 @@ LOCAL_IVP4=$(curl -H Metadata:true --noproxy "*" "http://169.254.169.254/metadat
 echo com.boomi.container.cloudlet.initialHosts=[7800] >> ${MoleculeSharedDir}/Molecule_${MoleculeClusterName}/conf/container.properties
 echo com.boomi.container.cloudlet.clusterConfig=UNICAST >> ${MoleculeSharedDir}/Molecule_${MoleculeClusterName}/conf/container.properties
 echo com.boomi.deployment.quickstart=True >> ${MoleculeSharedDir}/Molecule_${MoleculeClusterName}/conf/container.properties
-com.boomi.container.cloudlet.tcpPort=7800 >> ${MoleculeSharedDir}/Molecule_${MoleculeClusterName}/conf/container.properties
+echo com.boomi.container.cloudlet.tcpPort=7800 >> ${MoleculeSharedDir}/Molecule_${MoleculeClusterName}/conf/container.properties
 
 EOF
 chmod -R 777 /tmp/molecule_set_cluster_properties.sh
@@ -163,5 +163,4 @@ then
 fi
 
 sleep 60
-
 ${MoleculeSharedDir}/Molecule_${MoleculeClusterName}/bin/atom status
