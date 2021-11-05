@@ -12,4 +12,4 @@ https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template
 
 # Boomi AKS Quickstart Architectures
 
-![Boomi AKS Architecture](https://github.com/Ganesh-Yeole/quickstart-aks-boomi-molecule/tree/main/images/Azure%20VM%20Based%20Boomi%20molecule-Architecture.png)
+![Boomi AKS Architecture](https://github.com/Ganesh-Yeole/boomi-azure-quickstart/blob/main/images/Azure%20VM%20Based%20Boomi%20molecule-Architecture.png)
