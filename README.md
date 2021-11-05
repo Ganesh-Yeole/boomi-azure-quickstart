@@ -1,1 +1,15 @@
 # boomi-azure-quickstart
+
+## Step 3: Register for Azure NetApp Files
+
+https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-register
+
+## Step 4: Deploy Azure ARM Template
+
+[![Deploy To Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FGanesh-Yeole%2Fboomi-azure-quickstart%2Ftree%2Fmain%2Ftemplate%2Fazuredeploy.json)
+
+https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template-functions-resource?tabs=json#providers
+
+# Boomi AKS Quickstart Architectures
+
+![Boomi AKS Architecture](https://github.com/Ganesh-Yeole/quickstart-aks-boomi-molecule/tree/main/images/Azure VM Based Boomi molecule-Architecture.png)
