@@ -10,6 +10,6 @@ https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-reg
 
 https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template-functions-resource?tabs=json#providers
 
-# Boomi AKS Quickstart Architectures
+# Boomi VM Based Quickstart Architectures
 
 ![Boomi AKS Architecture](https://github.com/Ganesh-Yeole/boomi-azure-quickstart/blob/main/images/Azure%20VM%20Based%20Boomi%20molecule-Architecture.png)
