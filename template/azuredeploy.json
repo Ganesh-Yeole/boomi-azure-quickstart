@@ -156,6 +156,7 @@
     "natGatewayId": "[resourceId('Microsoft.Network/natGateways', variables('natGatewayname'))]",
 
     "virtualNetworkName": "[concat(variables('deploymentName'), '-virtualnetwork')]",
+    
     "virtualNetworkId": "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]",
 
     "virtualMachineSubnetName": "[concat(variables('deploymentName'), '-virtualMachineSubnet')]",
@@ -186,7 +187,8 @@
 
 
 
-    "virtualMachineName": "[concat(variables('deploymentName'), '-virtualMachine')]",
+   // "virtualMachineName": "[concat(variables('deploymentName'), '-virtualMachine')]",
+    "virtualMachineName": "[concat('Node','-1')]",
     "virtualMachineId": "[resourceId('Microsoft.Compute/virtualMachines', variables('virtualMachineName'))]",
 
     "headVirtualMachineNicName": "[concat(variables('virtualMachineName'), '-headNic')]",
@@ -212,8 +214,10 @@
     "workerVirtualMachineId": "[resourceId('Microsoft.Compute/virtualMachines', variables('workerVirtualMachineName'))]",
     "tailVirtualMachineId": "[resourceId('Microsoft.Compute/virtualMachines', variables('tailVirtualMachineName'))]",
 
-    "workerVirtualMachineName": "[concat(variables('virtualMachineName'), '-workerVM')]",
-    "tailVirtualMachineName": "[concat(variables('virtualMachineName'), '-tailVM')]",
+   // "workerVirtualMachineName": "[concat(variables('virtualMachineName'), '-workerVM')]",
+    //"tailVirtualMachineName": "[concat(variables('virtualMachineName'), '-tailVM')]",
+    "workerVirtualMachineName": "[concat('Node','-2')]",
+    "tailVirtualMachineName": "[concat('Node','-3')]",
 
     "moleculeDeploy": "[concat(variables('virtualMachineName'),'/molecule-deployments')]",
 
