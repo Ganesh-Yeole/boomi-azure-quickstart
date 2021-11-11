@@ -67,51 +67,23 @@
             },
             {
                 "name": "netAppServiceLevel",
-                "type": "Microsoft.Common.DropDown",
+                "type": "Microsoft.Common.TextBox",
                 "label": "NetApp Service Level",
                 "toolTip": "Target performance for the capacity pool. Service level: Ultra, Premium, or Standard.",
                 "defaultValue": "Standard",
                 "constraints": {
-                    "allowedValues": [
-                        {
-                            "label": "Standard",
-                           
-                            "value": "Standard"
-                        },
-                        {
-                            "label": "Premium",
-                           
-                            "value": "Premium"
-                        },
-                        {
-                            "label": "Ultra",
-                           
-                            "value": "Ultra"
-                        }
-                    ],
+                    
                     "required": true
                 }
             },
             {
                 "name": "BoomiAuthenticationType",
-                "type": "Microsoft.Common.DropDown",
+                "type": "Microsoft.Common.TextBox",
                 "label": "BoomiAuthenticationType",
                 "toolTip": "Boomi Platform Authentication Type",
                 "defaultValue": "Password",
                 "constraints": {
-                    "allowedValues": [
-                        {
-                            "label": "Password",
-                           
-                            "value": "Password"
-                        },
-                        {
-                            "label": "Token",
-                           
-                            "value": "Token"
-                        }
-                        
-                    ],
+                    
                     "required": true
                 }
             },
