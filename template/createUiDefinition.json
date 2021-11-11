@@ -138,33 +138,28 @@
             },
             {
                 "name": "virtualMachineAdminUsername",
-                "type": "Microsoft.Compute.UserNameTextBox",
+                "type": "Microsoft.Common.TextBox",
                 "label": "Username",
                 "toolTip": "Specifies the name of the administrator account of the virtual machine.",
-                "osPlatform": "Linux",
+                
                 "constraints": {
                     "required": true
                 }
             },
             {
                 "name": "virtualMachineAdminPassword",
-                "type": "Microsoft.Compute.CredentialsCombo",
+                "type": "Microsoft.Common.PasswordBox",
                 "label": {
                     "password": "Password",
                     "confirmPassword": "Confirm password"
                 },
-                "toolTip": {
-                   
-                    "password": "Specifies the password for the virtual machine."
-                    
-                },
+                "toolTip": "",               
                 "constraints": {
                     "required": true
                 },
                 "options": {
                     "hideConfirmation": false
-                },
-                "osPlatform": "Linux"
+                }
             }
         ],
         "steps": [
