@@ -133,7 +133,8 @@
                 "defaultValue": "",
                 "constraints": {
                     "required": true
-                }
+                },
+                "osPlatform": "Linux"
             },
             {
                 
