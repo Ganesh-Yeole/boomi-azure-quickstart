@@ -63,8 +63,9 @@
         ],
         "outputs":
          {
-        }
-      
-        
+             "location": "[location()]",
+            "virtualMachineAdminUsername": "[basics('virtualMachineAdminUsername')]",
+            "virtualMachineSize": "[steps('VirtualMachineConfig').virtualMachineSize]"
+        }  
     }
 }
