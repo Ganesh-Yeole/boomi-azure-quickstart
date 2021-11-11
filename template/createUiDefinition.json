@@ -8,101 +8,183 @@
             {
                 "name": "virtualNetworkAddressPrefixes",
                 "type": "Microsoft.Common.TextBox",
-                "label": "virtual NetworkAddress Prefixes",
-                "toolTip": "Specifies the address prefixes of the virtual network..",
-                "defaultValue": "10.0.0.0/8"
+                "label": "Virtual Network Address Prefixes",
+                "toolTip": "Specifies the address prefixes of the virtual network.",
+                "defaultValue": "10.0.0.0/8",
+                "constraints": {
+                    "required": true
+                }
             },
             {
                 "name": "applicationGatewaySubnetAddressPrefix",
                 "type": "Microsoft.Common.TextBox",
-                "label": "application GatewaySubnet Address Prefix",
-                "toolTip": "Specifies the address prefixes of the virtual network..",
-                "defaultValue": "10.0.0.0/8"
+                "label": "Application Gateway Subnet Address Prefix",
+                "toolTip": "Specifies the address prefix of the subnet which contains the Application Gateway.",
+                "defaultValue": "10.0.0.0/8",
+                "constraints": {
+                    "required": true
+                }
             },
             {
                 "name": "virtualMachineSubnetAddressPrefix",
                 "type": "Microsoft.Common.TextBox",
-                "label": "virtualMachineSubnetAddressPrefix",
-                "toolTip": "Specifies the address prefixes of the virtual network..",
-                "defaultValue": "10.0.0.0/8"
+                "label": "Virtual Machine SubnetAddress Prefix",
+                "toolTip": "Specifies the address prefix of the subnet which contains the virtual machine.",
+                "defaultValue": "10.0.0.0/8",
+                "constraints": {
+                    "required": true
+                }
             },
             {
                 "name": "netAppFileSubnetAddressPrefix",
                 "type": "Microsoft.Common.TextBox",
-                "label": "netAppFileSubnetAddressPrefix",
-                "toolTip": "Specifies the address prefixes of the virtual network..",
-                "defaultValue": "10.0.0.0/8"
+                "label": "NetAppFile Subnet Address Prefix",
+                "toolTip": "Specifies the NetApp File subnet IP prefix. This prefix must be within vnet IP prefix address space.",
+                "defaultValue": "10.0.0.0/8",
+                "constraints": {
+                    "required": true
+                }
             },
             {
                 "name": "remoteAccessCIDR",
                 "type": "Microsoft.Common.TextBox",
-                "label": "remoteAccessCIDR",
-                "toolTip": "Specifies the address prefixes of the virtual network..",
-                "defaultValue": "10.0.0.0/8"
+                "label": "Remote Access CIDR",
+                "toolTip": "The CIDR IP range that is permitted to access the bastion instances. We recommend that you set this value to a trusted IP range.",
+                "defaultValue": "10.0.0.0/8",
+                "constraints": {
+                    "required": true
+                }
             },
             {
                 "name": "moleculeClusterName",
                 "type": "Microsoft.Common.TextBox",
-                "label": "moleculeClusterName",
-                "toolTip": "Specifies the address prefixes of the virtual network..",
-                "defaultValue": "Boomi_Molecule_VM"
-            },
-            {
-                "name": "applicationGatewayZones",
-                "type": "Microsoft.Common.TextBox",
-                "label": "applicationGatewayZones",
-                "toolTip": "Specifies the address prefixes of the virtual network..",
-                "defaultValue": ""
+                "label": "Molecule Cluster Name",
+                "toolTip": "The name for the Boomi Molecule cluster.",
+                "defaultValue": "Boomi_Molecule_VM",
+                "constraints": {
+                    "required": true
+                }
             },
             {
                 "name": "netAppServiceLevel",
-                "type": "Microsoft.Common.TextBox",
+                "type": "Microsoft.Common.DropDown",
                 "label": "netAppServiceLevel",
-                "toolTip": "Specifies the address prefixes of the virtual network..",
-                "defaultValue": "Standard"
+                "toolTip": "Target performance for the capacity pool. Service level: Ultra, Premium, or Standard.",
+                "defaultValue": "Standard",
+                "constraints": {
+                    "allowedValues": [
+                        {
+                            "label": "Standard",
+                           
+                            "value": "Standard"
+                        },
+                        {
+                            "label": "Premium",
+                           
+                            "value": "Premium"
+                        },
+                        {
+                            "label": "Ultra",
+                           
+                            "value": "Ultra"
+                        }
+                    ],
+                    "required": true
+                }
             },
             {
                 "name": "BoomiAuthenticationType",
-                "type": "Microsoft.Common.TextBox",
+                "type": "Microsoft.Common.DropDown",
                 "label": "BoomiAuthenticationType",
-                "toolTip": "Specifies the address prefixes of the virtual network..",
-                "defaultValue": "token"
+                "toolTip": "Boomi Platform Authentication Type",
+                "defaultValue": "Password",
+                "constraints": {
+                    "allowedValues": [
+                        {
+                            "label": "Password",
+                           
+                            "value": "Password"
+                        },
+                        {
+                            "label": "Token",
+                           
+                            "value": "Token"
+                        }
+                        
+                    ],
+                    "required": true
+                }
             },
             {
                 "name": "BoomiAccountID",
                 "type": "Microsoft.Common.TextBox",
-                "label": "BoomiAccountID",
-                "toolTip": "Specifies the address prefixes of the virtual network..",
-                "defaultValue": ""
+                "label": "Boomi Account ID",
+                "toolTip": "The Boomi account ID that you want to associate with the new Molecule cluster.",
+                "defaultValue": "",
+                "constraints": {
+                    "required": true
+                }
             },
             {
                 "name": "BoomiUsername",
                 "type": "Microsoft.Common.TextBox",
                 "label": "BoomiUsername",
-                "toolTip": "Specifies the address prefixes of the virtual network..",
-                "defaultValue": ""
+                "toolTip": "The email account associated with the Boomi account.",
+                "defaultValue": "",
+                "constraints": {
+                    "required": true
+                }
             },
             {
+                
                 "name": "BoomiMFAInstallToken",
-                "type": "Microsoft.Common.TextBox",
-                "label": "BoomiMFAInstallToken",
-                "toolTip": "Specifies the address prefixes of the virtual network..",
-                "defaultValue": ""
+                "type": "Microsoft.Compute.CredentialsCombo",
+                "label": {
+                    "password": "Boomi MFA Install Token"
+                
+                },
+                "toolTip": {
+                   
+                    "password": "An MFA API token generated by your Dell Boomi Administrator."
+                    
+                },
+                "constraints": {
+                    "required": true
+                },
+                "options": {
+                    "hideConfirmation": false
+                }
             },
             {
+                
                 "name": "BoomiPassword",
-                "type": "Microsoft.Common.TextBox",
-                "label": "BoomiPassword",
-                "toolTip": "Specifies the address prefixes of the virtual network..",
-                "defaultValue": ""
+                "type": "Microsoft.Compute.CredentialsCombo",
+                "label": {
+                    "password": "Password",
+                    "confirmPassword": "Confirm password"
+                },
+                "toolTip": {
+                   
+                    "password": "The password associated with the Boomi account."
+                    
+                },
+                "constraints": {
+                    "required": true
+                },
+                "options": {
+                    "hideConfirmation": false
+                }
                 
             },
             {
                 "name": "virtualMachineAdminUsername",
                 "type": "Microsoft.Compute.UserNameTextBox",
                 "label": "Username",
-                "toolTip": "Admin username for the machine",
-                "osPlatform": "Linux"
+                "toolTip": "Specifies the name of the administrator account of the virtual machine.",
+                "osPlatform": "Ubuntu",
+                "constraints": {
+                    "required": true
+                }
             },
             {
                 "name": "virtualMachineAdminPassword",
@@ -113,8 +195,8 @@
                 },
                 "toolTip": {
                    
-                    "password": "Password for the Virtual Machine",
-                    "sshPublicKey": "SSH Public Key for the Virtual Machine"
+                    "password": "Specifies the password for the virtual machine."
+                    
                 },
                 "constraints": {
                     "required": true
@@ -122,7 +204,7 @@
                 "options": {
                     "hideConfirmation": false
                 },
-                "osPlatform": "Linux"
+                "osPlatform": "Ubuntu"
             }
         ],
         "steps": [
@@ -139,16 +221,14 @@
                         "name": "virtualMachineSize",
                         "type": "Microsoft.Compute.SizeSelector",
                         "label": "Virtual machine size",
-                        "toolTip": "The size of virtual machine to provision.",
+                        "toolTip": "Virtual machine size (has to be at least the size of Standard_A3 to support 2 NICs)",
                         "recommendedSizes": [
-                            "Standard_D2_v2",
-                            "Standard_A2_v2"
+                            "Standard_D4s_v3"
                         ],
-                        "osPlatform": "Linux",
+                        "osPlatform": "Ubuntu",
                         "count": "1"
                     }
-                ]
-            }
+                ]            }
         ],
         "outputs":
          {
@@ -163,7 +243,6 @@
             "netAppFileSubnetAddressPrefix": "[basics('netAppFileSubnetAddressPrefix')]",
             "remoteAccessCIDR": "[basics('remoteAccessCIDR')]",
             "moleculeClusterName": "[basics('moleculeClusterName')]",
-            "applicationGatewayZones": "[basics('applicationGatewayZones')]",
             "netAppServiceLevel": "[basics('netAppServiceLevel')]",
             "BoomiAuthenticationType": "[basics('BoomiAuthenticationType')]",
             "BoomiAccountID": "[basics('BoomiAccountID')]",
