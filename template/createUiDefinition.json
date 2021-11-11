@@ -144,9 +144,6 @@
                 "confirmPassword": "Confirm password"
                     },
                 "toolTip": "",
-                "constraints": {
-                    "required": true
-                },
                 "options": {
                     "hideConfirmation": false
                 }
@@ -162,9 +159,6 @@
                 
                 },
                 "toolTip": "",
-                "constraints": {
-                    "required": true
-                },
                 "options": {
                     "hideConfirmation": false
                 }
