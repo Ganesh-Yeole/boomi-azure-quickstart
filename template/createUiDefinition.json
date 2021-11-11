@@ -153,7 +153,8 @@
                 },
                 "options": {
                     "hideConfirmation": false
-                }
+                },
+                "osPlatform": "Linux"
             },
             {
                 
@@ -173,7 +174,8 @@
                 },
                 "options": {
                     "hideConfirmation": false
-                }
+                },
+                "osPlatform": "Linux"
                 
             },
             {
@@ -181,7 +183,7 @@
                 "type": "Microsoft.Compute.UserNameTextBox",
                 "label": "Username",
                 "toolTip": "Specifies the name of the administrator account of the virtual machine.",
-                "osPlatform": "Ubuntu",
+                "osPlatform": "Linux",
                 "constraints": {
                     "required": true
                 }
@@ -204,7 +206,7 @@
                 "options": {
                     "hideConfirmation": false
                 },
-                "osPlatform": "Ubuntu"
+                "osPlatform": "Linux"
             }
         ],
         "steps": [
@@ -225,7 +227,7 @@
                         "recommendedSizes": [
                             "Standard_D4s_v3"
                         ],
-                        "osPlatform": "Ubuntu",
+                        "osPlatform": "Linux",
                         "count": "1"
                     }
                 ]            }
