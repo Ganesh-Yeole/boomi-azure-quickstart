@@ -217,7 +217,7 @@
                     "preValidation": "Configure the virtual machine's resources and settings",
                     "postValidation": "Done"
                 },
-                "bladeTitle": "Infrastructure Settings",
+                "bladeTitle": "Virtual Machine Settings",
                 "elements": [
                     {
                         "name": "virtualMachineSize",
