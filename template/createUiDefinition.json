@@ -181,7 +181,7 @@
                         "type": "Microsoft.Compute.SizeSelector",
                         "label": "Virtual machine size",
                         "toolTip": "The size of virtual machine to provision.",
-                        "defaultValue": [
+                        "recommendedSizes": [
                             "Standard_D4s_v3"
                             
                         ],
