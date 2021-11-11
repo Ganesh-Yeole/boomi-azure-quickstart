@@ -217,7 +217,7 @@
             "BoomiAccountID": "[basics('BoomiAccountID')]",
             "BoomiUsername": "[basics('BoomiUsername')]",
             "BoomiPassword": "[basics('BoomiPassword')]",
-            "BoomiMFAInstallToken": "[steps'('MoleculeConfig').BoomiMFAInstallToken]"
+            "BoomiMFAInstallToken": "[steps('MoleculeConfig').BoomiMFAInstallToken]"
 
         }
         
