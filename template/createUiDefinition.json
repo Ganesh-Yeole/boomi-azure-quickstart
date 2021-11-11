@@ -143,7 +143,7 @@
                 "name": "MoleculeConfig",
                 "label": "Molecule Settings",
                 "subLabel": {
-                    "preValidation": "Configure the virtual machine's resources and settings",
+                    "preValidation": "Configure Molecule settings",
                     "postValidation": "Done"
                 },
                 "bladeTitle": "Molecule User Information",
