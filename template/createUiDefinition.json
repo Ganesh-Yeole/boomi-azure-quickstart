@@ -184,6 +184,28 @@
                         "count": "1"
                     }
                 ]            
+            },
+            {
+                "name": "VirtualMachineConfig",
+                "label": "Virtual Machine Settings",
+                "subLabel": {
+                    "preValidation": "Configure the virtual machine's resources and settings",
+                    "postValidation": "Done"
+                },
+                "bladeTitle": "Virtual Machine Settings2",
+                "elements": [
+                    {
+                        "name": "virtualMachineSize",
+                        "type": "Microsoft.Compute.SizeSelector",
+                        "label": "Virtual machine size",
+                        "toolTip": "Virtual machine size (has to be at least the size of Standard_A3 to support 2 NICs)",
+                        "recommendedSizes": [
+                            "Standard_D4s_v3"
+                        ],
+                        "osPlatform": "Linux",
+                        "count": "1"
+                    }
+                ]            
             }
         ],
         "outputs":
