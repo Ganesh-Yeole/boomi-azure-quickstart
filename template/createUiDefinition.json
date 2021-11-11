@@ -6,6 +6,136 @@
         "basics": [
        
             {
+                "name": "virtualNetworkAddressPrefixes",
+                "type": "Microsoft.Common.TextBox",
+                "label": "virtual NetworkAddress Prefixes",
+                "toolTip": "Specifies the address prefixes of the virtual network..",
+                "defaultValue": "10.0.0.0/8",
+                "constraints": {
+                    "required": true
+                }
+            },
+            {
+                "name": "applicationGatewaySubnetAddressPrefix",
+                "type": "Microsoft.Common.TextBox",
+                "label": "application GatewaySubnet Address Prefix",
+                "toolTip": "Specifies the address prefixes of the virtual network..",
+                "defaultValue": "10.0.0.0/8",
+                "constraints": {
+                    "required": true
+                }
+            },
+            {
+                "name": "virtualMachineSubnetAddressPrefix",
+                "type": "Microsoft.Common.TextBox",
+                "label": "virtualMachineSubnetAddressPrefix",
+                "toolTip": "Specifies the address prefixes of the virtual network..",
+                "defaultValue": "10.0.0.0/8",
+                "constraints": {
+                    "required": true
+                }
+            },
+            {
+                "name": "netAppFileSubnetAddressPrefix",
+                "type": "Microsoft.Common.TextBox",
+                "label": "netAppFileSubnetAddressPrefix",
+                "toolTip": "Specifies the address prefixes of the virtual network..",
+                "defaultValue": "10.0.0.0/8",
+                "constraints": {
+                    "required": true
+                }
+            },
+            {
+                "name": "remoteAccessCIDR",
+                "type": "Microsoft.Common.TextBox",
+                "label": "remoteAccessCIDR",
+                "toolTip": "Specifies the address prefixes of the virtual network..",
+                "defaultValue": "10.0.0.0/8",
+                "constraints": {
+                    "required": true
+                }
+            },
+            {
+                "name": "moleculeClusterName",
+                "type": "Microsoft.Common.TextBox",
+                "label": "moleculeClusterName",
+                "toolTip": "Specifies the address prefixes of the virtual network..",
+                "defaultValue": "Boomi_Molecule_VM",
+                "constraints": {
+                    "required": true
+                }
+            },
+            {
+                "name": "applicationGatewayZones",
+                "type": "Microsoft.Common.TextBox",
+                "label": "applicationGatewayZones",
+                "toolTip": "Specifies the address prefixes of the virtual network..",
+                "defaultValue": "",
+                "constraints": {
+                    "required": true
+                }
+            },
+            {
+                "name": "netAppServiceLevel",
+                "type": "Microsoft.Common.TextBox",
+                "label": "netAppServiceLevel",
+                "toolTip": "Specifies the address prefixes of the virtual network..",
+                "defaultValue": "Standard",
+                "constraints": {
+                    "required": true
+                }
+            },
+            {
+                "name": "BoomiAuthenticationType",
+                "type": "Microsoft.Common.TextBox",
+                "label": "BoomiAuthenticationType",
+                "toolTip": "Specifies the address prefixes of the virtual network..",
+                "defaultValue": "token",
+                "constraints": {
+                    "required": true
+                }
+            },
+            {
+                "name": "BoomiAccountID",
+                "type": "Microsoft.Common.TextBox",
+                "label": "BoomiAccountID",
+                "toolTip": "Specifies the address prefixes of the virtual network..",
+                "defaultValue": "",
+                "constraints": {
+                    "required": true
+                }
+            },
+            {
+                "name": "BoomiUsername",
+                "type": "Microsoft.Common.TextBox",
+                "label": "BoomiUsername",
+                "toolTip": "Specifies the address prefixes of the virtual network..",
+                "defaultValue": "",
+                "constraints": {
+                    "required": true
+                }
+            },
+            {
+                "name": "BoomiMFAInstallToken",
+                "type": "Microsoft.Common.TextBox",
+                "label": "BoomiMFAInstallToken",
+                "toolTip": "Specifies the address prefixes of the virtual network..",
+                "defaultValue": "",
+                "constraints": {
+                    "required": true
+                }
+            },
+            {
+                "name": "BoomiPassword",
+                "type": "Microsoft.Common.TextBox",
+                "label": "BoomiPassword",
+                "toolTip": "Specifies the address prefixes of the virtual network..",
+                "defaultValue": "",
+                "constraints": {
+                    "required": true
+                }
+            },
+            {
                 "name": "virtualMachineAdminUsername",
                 "type": "Microsoft.Compute.UserNameTextBox",
                 "label": "Username",
@@ -63,9 +193,26 @@
         ],
         "outputs":
          {
-             "location": "[location()]",
+            "location": "[location()]",
             "virtualMachineAdminUsername": "[basics('virtualMachineAdminUsername')]",
-            "virtualMachineSize": "[steps('VirtualMachineConfig').virtualMachineSize]"
-        }  
+            "virtualMachineAdminPassword": "[basics('virtualMachineAdminPassword')]",
+            "virtualMachineSize": "[steps('VirtualMachineConfig').virtualMachineSize]",
+
+            "virtualNetworkAddressPrefixes": "[basics('virtualNetworkAddressPrefixes')]",
+            "applicationGatewaySubnetAddressPrefix": "[basics('applicationGatewaySubnetAddressPrefix')]",
+            "virtualMachineSubnetAddressPrefix": "[basics('virtualMachineSubnetAddressPrefix')]",
+            "netAppFileSubnetAddressPrefix": "[basics('netAppFileSubnetAddressPrefix')]",
+            "remoteAccessCIDR": "[basics('remoteAccessCIDR')]",
+            "moleculeClusterName": "[basics('moleculeClusterName')]",
+            "applicationGatewayZones": "[basics('applicationGatewayZones')]",
+            "netAppServiceLevel": "[basics('netAppServiceLevel')]",
+            "BoomiAuthenticationType": "[basics('BoomiAuthenticationType')]",
+            "BoomiAccountID": "[basics('BoomiAccountID')]",
+            "BoomiUsername": "[basics('BoomiUsername')]",
+            "BoomiPassword": "[basics('BoomiPassword')]",
+            "BoomiMFAInstallToken": "[basics('BoomiMFAInstallToken')]"
+
+        }
+        
     }
 }
