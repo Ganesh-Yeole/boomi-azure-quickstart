@@ -9,13 +9,6 @@
         "description": "Specifies the address prefixes of the virtual network."
       }
     },
-    "aksSubnetAddressPrefix": {
-      "defaultValue": "10.0.0.0/20",
-      "type": "string",
-      "metadata": {
-        "description": "Specifies the address prefix of the subnet hosting the system node pool of the AKS cluster."
-      }
-    },
     "applicationGatewaySubnetAddressPrefix": {
       "type": "string",
       "defaultValue": "10.0.16.0/25",
@@ -49,13 +42,6 @@
       "defaultValue": "Boomi_Molecule_VM",
       "metadata": {
         "description": "The name for the Boomi Molecule cluster."
-      }
-    },
-    "applicationGatewayZones": {
-      "type": "array",
-      "defaultValue": [],
-      "metadata": {
-        "description": "Specifies the availability zones of the Application Gateway."
       }
     },
     "netAppServiceLevel": {
@@ -867,7 +853,7 @@
         "[variables('workerVirtualMachineId')]",
         "[variables('tailVirtualMachineId')]"
       ],
-      "zones": "[parameters('applicationGatewayZones')]",
+      "zones": "[[]]",
       "properties": {
         "sku": {
           "name": "Standard_v2",
