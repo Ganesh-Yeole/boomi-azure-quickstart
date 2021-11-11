@@ -853,7 +853,7 @@
         "[variables('workerVirtualMachineId')]",
         "[variables('tailVirtualMachineId')]"
       ],
-      "zones": "[[]]",
+     // "zones": "[[]]",
       "properties": {
         "sku": {
           "name": "Standard_v2",
