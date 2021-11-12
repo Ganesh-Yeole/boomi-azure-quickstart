@@ -66,7 +66,7 @@
                     {
                         "name": "BoomiAuthenticationType",
                         "type": "Microsoft.Common.DropDown",
-                        "label": "BoomiAuthenticationType",
+                        "label": "Boomi Authentication Type",
                         "toolTip": "Boomi Platform Authentication Type",
                         "defaultValue": "Password",
                         "constraints": {
