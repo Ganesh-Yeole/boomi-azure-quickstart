@@ -126,7 +126,7 @@ chmod -R 777 /tmp/molecule_set_cluster_properties.sh
 
 if [ $node_type == "head" ]
 then
-  if [ $boomi_auth == "token" ]
+  if [ $boomi_auth == "Token" ]
   then
     echo "************token**************"
   ls -l
