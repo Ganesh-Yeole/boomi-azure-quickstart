@@ -144,12 +144,23 @@
                 "elements": [
                     {
                         "name": "BoomiAuthenticationType",
-                        "type": "Microsoft.Common.TextBox",
+                        "type": "Microsoft.Common.DropDown",
                         "label": "BoomiAuthenticationType",
                         "toolTip": "Boomi Platform Authentication Type",
                         "defaultValue": "Password",
                         "constraints": {
-                            
+
+                        "allowedValues": [
+                        {
+                            "label": "Password", 
+                            "value": "Password"
+                        },
+                        {
+                            "label": "Token",                          
+                            "value": "Token"
+                        }
+                        
+                    ],
                             "required": true
                         }
                     },                   
