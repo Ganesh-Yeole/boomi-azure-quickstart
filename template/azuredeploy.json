@@ -2,60 +2,7 @@
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "virtualNetworkAddressPrefixes": {
-      "defaultValue": "10.0.0.0/19",
-      "type": "string",
-      "metadata": {
-        "description": "Specifies the address prefixes of the virtual network."
-      }
-    },
-    "applicationGatewaySubnetAddressPrefix": {
-      "type": "string",
-      "defaultValue": "10.0.16.0/25",
-      "metadata": {
-        "description": "Specifies the address prefix of the subnet which contains the Application Gateway."
-      }
-    },
-    "virtualMachineSubnetAddressPrefix": {
-      "type": "string",
-      "defaultValue": "10.0.16.128/25",
-      "metadata": {
-        "description": "Specifies the address prefix of the subnet which contains the virtual machine."
-      }
-    },
-    "netAppFileSubnetAddressPrefix": {
-      "type": "string",
-      "defaultValue": "10.0.17.0/25",
-      "metadata": {
-        "description": "Specifies the NetApp File subnet IP prefix. This prefix must be within vnet IP prefix address space."
-      }
-    },
-    "remoteAccessCIDR": {
-      "type": "string",
-      "defaultValue": "0.0.0.0/0",
-      "metadata": {
-        "description": "The CIDR IP range that is permitted to access the bastion instances. We recommend that you set this value to a trusted IP range."
-      }
-    },
-    "moleculeClusterName": {
-      "type": "string",
-      "defaultValue": "Boomi_Molecule_VM",
-      "metadata": {
-        "description": "The name for the Boomi Molecule cluster."
-      }
-    },
-    "netAppServiceLevel": {
-      "defaultValue": "Standard",
-      "type": "string",
-      "allowedValues": [
-        "Premium",
-        "Ultra",
-        "Standard"
-      ],
-      "metadata": {
-        "description": "Target performance for the capacity pool. Service level: Ultra, Premium, or Standard."
-      }
-    },
+    
     "virtualMachineSize": {
       "type": "string",
       "defaultValue": "Standard_D4s_v3",
@@ -111,6 +58,13 @@
       "type": "securestring",
       "metadata": {
         "description": "The password associated with the Boomi account."
+      }
+    },
+    "moleculeClusterName": {
+      "type": "string",
+      "defaultValue": "Boomi_Molecule_VM",
+      "metadata": {
+        "description": "The name for the Boomi Molecule cluster."
       }
     }
   },
@@ -342,8 +296,8 @@
               "sourcePortRange": "*",
               "destinationPortRange": "22",
               "protocol": "Tcp",
-              "sourceAddressPrefix": "[parameters('remoteAccessCIDR')]",
-              "destinationAddressPrefix": "[parameters('virtualMachineSubnetAddressPrefix')]"
+              "sourceAddressPrefix": "0.0.0.0/0",
+              "destinationAddressPrefix": "10.0.16.128/25"
             }
           }
         ]
@@ -361,7 +315,7 @@
       "properties": {
         "addressSpace": {
           "addressPrefixes": [
-            "[parameters('virtualNetworkAddressPrefixes')]"
+            "10.0.0.0/19"
           ]
         },
         "dhcpOptions": {
@@ -371,7 +325,7 @@
           {
             "name": "[variables('virtualMachineSubnetName')]",
             "properties": {
-              "addressPrefix": "[parameters('virtualMachineSubnetAddressPrefix')]",
+              "addressPrefix": "10.0.16.128/25",
               "networkSecurityGroup": {
                 "id": "[variables('virtualMachineSubnetNsgId')]"
               },
@@ -390,7 +344,7 @@
           {
             "name": "[variables('applicationGatewaySubnetName')]",
             "properties": {
-              "addressPrefix": "[parameters('applicationGatewaySubnetAddressPrefix')]",
+              "addressPrefix": "10.0.16.0/25",
               "privateEndpointNetworkPolicies": "Disabled",
               "privateLinkServiceNetworkPolicies": "Enabled",
               "serviceEndpoints": [
@@ -406,7 +360,7 @@
           {
             "name": "[variables('netAppFileSubnetName')]",
             "properties": {
-              "addressPrefix": "[parameters('netAppFileSubnetAddressPrefix')]",
+              "addressPrefix": "10.0.17.0/25",
               "privateEndpointNetworkPolicies": "Disabled",
               "privateLinkServiceNetworkPolicies": "Enabled",
               "delegations": [
@@ -441,7 +395,7 @@
         "[variables('netAppAccountId')]"
       ],
       "properties": {
-        "serviceLevel": "[parameters('netAppServiceLevel')]",
+        "serviceLevel": "Standard",
         "size": 4398046511104
       }
     },
@@ -455,7 +409,7 @@
         "[variables('virtualNetworkId')]"
       ],
       "properties": {
-        "serviceLevel": "[parameters('netAppServiceLevel')]",
+        "serviceLevel": "Standard",
         "creationToken": "[variables('netAppVolumeName')]",
         "usageThreshold": 107374182400,
         "exportPolicy": {
@@ -468,7 +422,7 @@
               "nfsv3": true,
               "nfsv41": false,
               "chownMode": "Unrestricted",
-              "allowedClients": "[parameters('virtualNetworkAddressPrefixes')]"
+              "allowedClients": "10.0.0.0/19"
             }
           ]
         },
