@@ -214,7 +214,7 @@
 
             "netAppServiceLevel": "[basics('netAppServiceLevel')]",
             "BoomiAuthenticationType": "[steps('MoleculeConfig').BoomiAuthenticationType]",
-            "BoomiAccountID": "[steps'('MoleculeConfig').BoomiAccountID]",
+            "BoomiAccountID": "[steps('MoleculeConfig').BoomiAccountID]",
             "BoomiUsername": "[steps('MoleculeConfig').BoomiUsername]",
             "BoomiPassword": "[steps('MoleculeConfig').BoomiPassword]",
             "BoomiMFAInstallToken": "[steps('MoleculeConfig').BoomiMFAInstallToken]",
