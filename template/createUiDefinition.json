@@ -218,7 +218,7 @@
             "BoomiUsername": "[steps('MoleculeConfig').BoomiUsername]",
             "BoomiPassword": "[steps('MoleculeConfig').BoomiPassword]",
             "BoomiMFAInstallToken": "[steps('MoleculeConfig').BoomiMFAInstallToken]",
-            "moleculeClusterName": "[steps('MoleculeConfig').moleculeClusterName')]"
+            "moleculeClusterName": "[steps('MoleculeConfig').moleculeClusterName]"
 
 
         }
