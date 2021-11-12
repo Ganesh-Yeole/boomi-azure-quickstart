@@ -163,12 +163,11 @@
                     },
                     {
                              
-                            "name": "BoomiMFAInstallToken",
+                           "name": "BoomiMFAInstallToken",
                             "type": "Microsoft.Common.PasswordBox",
                             "label": {
-                                "password": "Boomi MFA Install Token",
-                                "confirmPassword": "Confirm Boomi MFA Install Token"
-                            
+                                "password": "Boomi MFA Install Token"
+                     
                             },
                             "toolTip": "",
                             "options": {
