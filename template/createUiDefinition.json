@@ -135,21 +135,11 @@
                             
                             "required": true
                         }
-                    },
-                    {
-                        "name": "BoomiAccountID",
-                        "type": "Microsoft.Common.TextBox",
-                        "label": "Boomi Account ID",
-                        "toolTip": "The Boomi account ID that you want to associate with the new Molecule cluster.",
-                        "defaultValue": "",
-                        "constraints": {
-                            "required": true
-                        }
-                    },
+                    },                   
                     {
                         "name": "BoomiUsername",
                         "type": "Microsoft.Common.TextBox",
-                        "label": "Boomi User name",
+                        "label": "User name",
                         "toolTip": "The email account associated with the Boomi account.",
                         "defaultValue": "",
                         "constraints": {
@@ -187,9 +177,19 @@
                                                  
                     },
                     {
+                        "name": "BoomiAccountID",
+                        "type": "Microsoft.Common.TextBox",
+                        "label": "AtomSphere Account ID",
+                        "toolTip": "The Boomi account ID that you want to associate with the new Molecule cluster.",
+                        "defaultValue": "",
+                        "constraints": {
+                            "required": true
+                        }
+                    },
+                    {
                         "name": "moleculeClusterName",
                         "type": "Microsoft.Common.TextBox",
-                        "label": "Molecule Cluster Name",
+                        "label": "Molecule Name",
                         "toolTip": "The name for the Boomi Molecule cluster.",
                         "defaultValue": "Boomi_Molecule_VM",
                         "constraints": {
@@ -211,13 +211,15 @@
             "virtualMachineSubnetAddressPrefix": "[basics('virtualMachineSubnetAddressPrefix')]",
             "netAppFileSubnetAddressPrefix": "[basics('netAppFileSubnetAddressPrefix')]",
             "remoteAccessCIDR": "[basics('remoteAccessCIDR')]",
-            "moleculeClusterName": "[basics('moleculeClusterName')]",
+
             "netAppServiceLevel": "[basics('netAppServiceLevel')]",
-            "BoomiAuthenticationType": "[steps'('MoleculeConfig').BoomiAuthenticationType]",
+            "BoomiAuthenticationType": "[steps('MoleculeConfig').BoomiAuthenticationType]",
             "BoomiAccountID": "[steps'('MoleculeConfig').BoomiAccountID]",
-            "BoomiUsername": "[steps'('MoleculeConfig').BoomiUsername]",
-            "BoomiPassword": "[steps'('MoleculeConfig').BoomiPassword]",
-            "BoomiMFAInstallToken": "[steps'('MoleculeConfig').BoomiMFAInstallToken]"
+            "BoomiUsername": "[steps('MoleculeConfig').BoomiUsername]",
+            "BoomiPassword": "[steps('MoleculeConfig').BoomiPassword]",
+            "BoomiMFAInstallToken": "[steps('MoleculeConfig').BoomiMFAInstallToken]",
+            "moleculeClusterName": "[steps('MoleculeConfig').moleculeClusterName')]"
+
 
         }
         
