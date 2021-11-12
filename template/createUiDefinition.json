@@ -2,12 +2,13 @@
     "$schema": "https://schema.management.azure.com/schemas/0.1.2-preview/CreateUIDefinition.MultiVm.json#",
     "handler": "Microsoft.Azure.CreateUIDef",
     "version": "0.1.2-preview",
-    "parameters": {
+    "parameters": {   
         "basics": [
+          
             {
                 "name": "virtualNetworkAddressPrefixes",
                 "type": "Microsoft.Common.TextBox",
-                "label": "Virtual Network Address Prefixes",
+                "label": "Virtual Network Address",
                 "toolTip": "Specifies the address prefixes of the virtual network.",
                 "defaultValue": "10.0.0.0/8",
                 "constraints": {
@@ -17,7 +18,7 @@
             {
                 "name": "applicationGatewaySubnetAddressPrefix",
                 "type": "Microsoft.Common.TextBox",
-                "label": "Application Gateway Subnet Address Prefix",
+                "label": "Application Gateway Subnet Address",
                 "toolTip": "Specifies the address prefix of the subnet which contains the Application Gateway.",
                 "defaultValue": "10.0.16.0/25",
                 "constraints": {
@@ -27,7 +28,7 @@
             {
                 "name": "virtualMachineSubnetAddressPrefix",
                 "type": "Microsoft.Common.TextBox",
-                "label": "Virtual Machine SubnetAddress Prefix",
+                "label": "Virtual Machine Subnet Address",
                 "toolTip": "Specifies the address prefix of the subnet which contains the virtual machine.",
                 "defaultValue": "10.0.16.128/25",
                 "constraints": {
@@ -37,7 +38,7 @@
             {
                 "name": "netAppFileSubnetAddressPrefix",
                 "type": "Microsoft.Common.TextBox",
-                "label": "NetAppFile Subnet Address Prefix",
+                "label": "NetAppFile Subnet Address",
                 "toolTip": "Specifies the NetApp File subnet IP prefix. This prefix must be within vnet IP prefix address space.",
                 "defaultValue": "10.0.17.0/25",
                 "constraints": {
@@ -56,12 +57,28 @@
             },
             {
                 "name": "netAppServiceLevel",
-                "type": "Microsoft.Common.TextBox",
+                "type": "Microsoft.Common.DropDown",
                 "label": "NetApp Service Level",
                 "toolTip": "Target performance for the capacity pool. Service level: Ultra, Premium, or Standard.",
                 "defaultValue": "Standard",
                 "constraints": {
                     
+                    "allowedValues": [
+                        {
+                            "label": "Ultra", 
+                            "value": "Ultra"
+                        },
+                        {
+                            "label": "Premium",                          
+                            "value": "Premium"
+                        },
+                        {
+                            "label": "Standard",                          
+                            "value": "Standard"
+                        }
+                        
+                    ],
+            
                     "required": true
                 }
             },
@@ -163,15 +180,16 @@
                     },
                     {
                              
-                           "name": "BoomiMFAInstallToken",
+                            "name": "BoomiMFAInstallToken",
                             "type": "Microsoft.Common.PasswordBox",
                             "label": {
-                                "password": "Boomi MFA Install Token"
+                                "password": "Boomi MFA Install Token",
+                                "confirmPassword": "Confirm Boomi MFA Install Token"
                      
                             },
                             "toolTip": "",
                             "options": {
-                                "hideConfirmation": false
+                                "hideConfirmation": true
                             }
                                                  
                     },
