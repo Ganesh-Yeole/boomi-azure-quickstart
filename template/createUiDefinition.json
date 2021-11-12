@@ -4,7 +4,6 @@
     "version": "0.1.2-preview",
     "parameters": {
         "basics": [
-       
             {
                 "name": "virtualNetworkAddressPrefixes",
                 "type": "Microsoft.Common.TextBox",
@@ -56,16 +55,6 @@
                 }
             },
             {
-                "name": "moleculeClusterName",
-                "type": "Microsoft.Common.TextBox",
-                "label": "Molecule Cluster Name",
-                "toolTip": "The name for the Boomi Molecule cluster.",
-                "defaultValue": "Boomi_Molecule_VM",
-                "constraints": {
-                    "required": true
-                }
-            },
-            {
                 "name": "netAppServiceLevel",
                 "type": "Microsoft.Common.TextBox",
                 "label": "NetApp Service Level",
@@ -76,52 +65,7 @@
                     "required": true
                 }
             },
-            {
-                "name": "BoomiAuthenticationType",
-                "type": "Microsoft.Common.TextBox",
-                "label": "BoomiAuthenticationType",
-                "toolTip": "Boomi Platform Authentication Type",
-                "defaultValue": "Password",
-                "constraints": {
-                    
-                    "required": true
-                }
-            },
-            {
-                "name": "BoomiAccountID",
-                "type": "Microsoft.Common.TextBox",
-                "label": "Boomi Account ID",
-                "toolTip": "The Boomi account ID that you want to associate with the new Molecule cluster.",
-                "defaultValue": "",
-                "constraints": {
-                    "required": true
-                }
-            },
-            {
-                "name": "BoomiUsername",
-                "type": "Microsoft.Common.TextBox",
-                "label": "Boomi User name",
-                "toolTip": "The email account associated with the Boomi account.",
-                "defaultValue": "",
-                "constraints": {
-                    "required": true
-                }
-            },
-            {
-                
-                "name": "BoomiPassword",
-                "type": "Microsoft.Common.PasswordBox",
-                "label": {
-                "password": "Password",
-                "confirmPassword": "Confirm password"
-                    },
-                "toolTip": "",
-                "options": {
-                    "hideConfirmation": false
-                }
-                
-                
-            },
+           
             
             {
                 "name": "virtualMachineAdminUsername",
@@ -152,12 +96,12 @@
         "steps": [
             {
                 "name": "VirtualMachineConfig",
-                "label": "Virtual Machine Settings",
+                "label": "Infrastructure Settings",
                 "subLabel": {
                     "preValidation": "Configure the virtual machine's resources and settings",
                     "postValidation": "Done"
                 },
-                "bladeTitle": "Virtual Machine Settings",
+                "bladeTitle": "Infrastructure Settings",
                 "elements": [
                     {
                         "name": "virtualMachineSize",
@@ -174,13 +118,59 @@
             },
             {
                 "name": "MoleculeConfig",
-                "label": "Molecule Settings",
+                "label": "AtomSphere User Information",
                 "subLabel": {
                     "preValidation": "Configure the virtual machine's resources and settings",
                     "postValidation": "Done"
                 },
-                "bladeTitle": "Molecule Config",
+                "bladeTitle": "AtomSphere User Information",
                 "elements": [
+                    {
+                        "name": "BoomiAuthenticationType",
+                        "type": "Microsoft.Common.TextBox",
+                        "label": "BoomiAuthenticationType",
+                        "toolTip": "Boomi Platform Authentication Type",
+                        "defaultValue": "Password",
+                        "constraints": {
+                            
+                            "required": true
+                        }
+                    },
+                    {
+                        "name": "BoomiAccountID",
+                        "type": "Microsoft.Common.TextBox",
+                        "label": "Boomi Account ID",
+                        "toolTip": "The Boomi account ID that you want to associate with the new Molecule cluster.",
+                        "defaultValue": "",
+                        "constraints": {
+                            "required": true
+                        }
+                    },
+                    {
+                        "name": "BoomiUsername",
+                        "type": "Microsoft.Common.TextBox",
+                        "label": "Boomi User name",
+                        "toolTip": "The email account associated with the Boomi account.",
+                        "defaultValue": "",
+                        "constraints": {
+                            "required": true
+                        }
+                    },
+                    {
+                        
+                        "name": "BoomiPassword",
+                        "type": "Microsoft.Common.PasswordBox",
+                        "label": {
+                        "password": "Password",
+                        "confirmPassword": "Confirm password"
+                            },
+                        "toolTip": "",
+                        "options": {
+                            "hideConfirmation": false
+                        }
+                        
+                        
+                    },
                     {
                              
                             "name": "BoomiMFAInstallToken",
@@ -195,6 +185,16 @@
                                 "hideConfirmation": false
                             }
                                                  
+                    },
+                    {
+                        "name": "moleculeClusterName",
+                        "type": "Microsoft.Common.TextBox",
+                        "label": "Molecule Cluster Name",
+                        "toolTip": "The name for the Boomi Molecule cluster.",
+                        "defaultValue": "Boomi_Molecule_VM",
+                        "constraints": {
+                            "required": true
+                        }
                     }
                 ]            
             }
@@ -213,11 +213,11 @@
             "remoteAccessCIDR": "[basics('remoteAccessCIDR')]",
             "moleculeClusterName": "[basics('moleculeClusterName')]",
             "netAppServiceLevel": "[basics('netAppServiceLevel')]",
-            "BoomiAuthenticationType": "[basics('BoomiAuthenticationType')]",
-            "BoomiAccountID": "[basics('BoomiAccountID')]",
-            "BoomiUsername": "[basics('BoomiUsername')]",
-            "BoomiPassword": "[basics('BoomiPassword')]",
-            "BoomiMFAInstallToken": "[steps('MoleculeConfig').BoomiMFAInstallToken]"
+            "BoomiAuthenticationType": "[steps'('MoleculeConfig').BoomiAuthenticationType]",
+            "BoomiAccountID": "[steps'('MoleculeConfig').BoomiAccountID]",
+            "BoomiUsername": "[steps'('MoleculeConfig').BoomiUsername]",
+            "BoomiPassword": "[steps'('MoleculeConfig').BoomiPassword]",
+            "BoomiMFAInstallToken": "[steps'('MoleculeConfig').BoomiMFAInstallToken]"
 
         }
         
