@@ -66,6 +66,13 @@ MoleculeLocalTemp="/home/boomi/tmp"
 mkdir -p ${MoleculeSharedDir}
 
 apt-get install nfs-common -y 
+
+if [ $? -ne 0 ]; then
+   apt-get install nfs-common -y
+else
+   echo "NFS installation Success"
+fi
+
 apt git wget -y
 apt install default-jre -y
 apt install net-tools
