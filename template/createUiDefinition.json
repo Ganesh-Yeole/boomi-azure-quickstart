@@ -74,10 +74,12 @@
                         "allowedValues": [
                         {
                             "label": "Password", 
+                            "description": "Please pass values to username and password",
                             "value": "Password"
                         },
                         {
-                            "label": "Token",                          
+                            "label": "Token", 
+                            "description": "Please pass values to username and token",
                             "value": "Token"
                         }
                         
