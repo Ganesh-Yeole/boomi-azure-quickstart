@@ -22,7 +22,7 @@
                     "password": "Password",
                     "confirmPassword": "Confirm password"
                 },
-                "toolTip": "",               
+                "toolTip": "Specifies the password of the administrator account of the virtual machine.",               
                 "constraints": {
                     "required": true
                 },
