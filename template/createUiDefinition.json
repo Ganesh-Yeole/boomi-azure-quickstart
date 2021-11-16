@@ -105,7 +105,7 @@
                         "password": "Password",
                         "confirmPassword": "Confirm password"
                             },
-                        "toolTip": "",
+                        "toolTip": "Boomi password needed when authentication type is Password",
                         "options": {
                             "hideConfirmation": false
                         }
@@ -121,7 +121,7 @@
                                 "confirmPassword": "Confirm Boomi MFA Install Token"
                      
                             },
-                            "toolTip": "",
+                            "toolTip": "Boomi token needed when authentication type is Token",
                             "options": {
                                 "hideConfirmation": true
                             }
