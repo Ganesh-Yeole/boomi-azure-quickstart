@@ -73,7 +73,7 @@
 
                         "allowedValues": [
                         {
-                            "label": "Password", 
+                            "label": "Please pass values to username and password", 
                             "description": "Please pass values to username and password",
                             "value": "Password"
                         },
