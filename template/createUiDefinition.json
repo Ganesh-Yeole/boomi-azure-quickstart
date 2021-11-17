@@ -24,7 +24,10 @@
                 },
                 "toolTip": "Specifies the password of the administrator account of the virtual machine.",               
                 "constraints": {
-                    "required": true
+                    "required": true,
+                    "regex": "^((?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])|(?=.*[0-9])(?=.*[a-z])(?=.*[!@#$%^&*])|(?=.*[0-9])(?=.*[A-Z])(?=.*[!@#$%^&*])|(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])).{6,72}$",
+                    "validationMessage": "Password must be at least 6 characters long and have 3 out of the following: one number, one lower case, one upper case, or one special character"
+             
                 },
                 "options": {
                     "hideConfirmation": false
@@ -45,7 +48,7 @@
                         "name": "virtualMachineSize",
                         "type": "Microsoft.Compute.SizeSelector",
                         "label": "Virtual machine size",
-                        "toolTip": "Virtual machine size (has to be at least the size of Standard_A3 to support 2 NICs)",
+                        "toolTip": "Virtual machine size (has to be at least the size of Standard_A3)",
                         "recommendedSizes": [
                             "Standard_D4s_v3"
                         ],
@@ -68,18 +71,16 @@
                         "type": "Microsoft.Common.DropDown",
                         "label": "Boomi Authentication Type",
                         "toolTip": "Boomi Platform Authentication Type",
-                        "defaultValue": "Password",
+                        "defaultValue": "Token",
                         "constraints": {
 
                         "allowedValues": [
                         {
                             "label": "Password", 
-                            "description": "Please pass values to username and password",
                             "value": "Password"
                         },
                         {
                             "label": "Token", 
-                            "description": "Please pass values to username and token",
                             "value": "Token"
                         }
                         
@@ -117,7 +118,7 @@
                             "name": "BoomiMFAInstallToken",
                             "type": "Microsoft.Common.PasswordBox",
                             "label": {
-                                "password": "Boomi MFA Install Token",
+                                "password": "Boomi Token",
                                 "confirmPassword": "Confirm Boomi MFA Install Token"
                      
                             },
