@@ -5,7 +5,7 @@ wget https://raw.githubusercontent.com/Ganesh-Yeole/boomi-azure-quickstart/main/
 
 pip install -t . -r ./requirements.txt
 
-if [ $BOOMIAUTHENTICATIONTYPE == "token" ]
+if [ $BOOMIAUTHENTICATIONTYPE == "Token" ]
 then
     result=`python license_validation.py "$MOLECULEACCOUNTID" "BOOMI_TOKEN.$MOLECULEUSERNAME" "$BOOMIMFAAPITOKEN" MOLECULE 60`
 else
