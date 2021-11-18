@@ -66,6 +66,10 @@
         "metadata": {
           "description": "The name for the Boomi Molecule cluster."
         }
+      },
+      "installationToken": {
+        "type": "string",
+        "defaultValue":"[reference(resourceId('Microsoft.Resources/deploymentScripts', 'boomiLicenseValidate')).outputs.installation_token]"
       }
     },
     "variables": {
@@ -684,7 +688,7 @@
             "fileUris": [
               "https://raw.githubusercontent.com/Ganesh-Yeole/boomi-azure-quickstart/main/scripts/deployment.sh"
             ],
-            "commandToExecute": "[concat('./deployment.sh', ' --resource_group \"', resourceGroup().name, '\" --molecule_cluster_name \"', parameters('moleculeClusterName'), '\" --boomi_auth \"', parameters('BoomiAuthenticationType'), '\" --boomi_token \"', installationToken, '\" --boomi_username \"', parameters('BoomiUsername'), '\" --boomi_password \"', parameters('BoomiPassword'), '\" --boomi_account \"', parameters('BoomiAccountID'), '\" --fileshare \"', variables('netAppVolumeName'), '\" --netAppIP \"', reference(resourceId('Microsoft.NetApp/netAppAccounts/capacityPools/volumes/', variables('netAppAccountName'), variables('netAppPoolName'), variables('netAppVolumeName'))).mountTargets[0].ipAddress, '\" --node_type head\"','\"')]"
+            "commandToExecute": "[concat('./deployment.sh', ' --resource_group \"', resourceGroup().name, '\" --molecule_cluster_name \"', parameters('moleculeClusterName'), '\" --boomi_auth \"', parameters('BoomiAuthenticationType'), '\" --boomi_token \"', parameters('installationToken'), '\" --boomi_username \"', parameters('BoomiUsername'), '\" --boomi_password \"', parameters('BoomiPassword'), '\" --boomi_account \"', parameters('BoomiAccountID'), '\" --fileshare \"', variables('netAppVolumeName'), '\" --netAppIP \"', reference(resourceId('Microsoft.NetApp/netAppAccounts/capacityPools/volumes/', variables('netAppAccountName'), variables('netAppPoolName'), variables('netAppVolumeName'))).mountTargets[0].ipAddress, '\" --node_type head\"','\"')]"
           }
         }
       },
