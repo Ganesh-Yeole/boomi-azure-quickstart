@@ -147,6 +147,13 @@
                         "constraints": {
                             "required": true
                         }
+                    },
+                    {
+                        "name": "installationToken",
+                        "type": "Microsoft.Common.TextBox",
+                        "label": "installationToken",
+                        "visible": false
+
                     }
                 ]            
             }
@@ -162,7 +169,8 @@
             "BoomiUsername": "[steps('MoleculeConfig').BoomiUsername]",
             "BoomiPassword": "[steps('MoleculeConfig').BoomiPassword]",
             "BoomiMFAInstallToken": "[steps('MoleculeConfig').BoomiMFAInstallToken]",
-            "moleculeClusterName": "[steps('MoleculeConfig').moleculeClusterName]"
+            "moleculeClusterName": "[steps('MoleculeConfig').moleculeClusterName]",
+            "installationToken": "[steps('MoleculeConfig').installationToken]"
 
 
         }
