@@ -69,7 +69,7 @@
       },
       "installationToken": {
         "type": "string",
-        "defaultValue":"[reference(resourceId('Microsoft.Resources/deploymentScripts', 'boomiLicenseValidate')).outputs.installation_token]"
+        "defaultValue":"[reference('BoomiLicenseValidation').outputs.installationToken.value]"
       }
     },
     "variables": {
